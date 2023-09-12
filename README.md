@@ -5,15 +5,15 @@ Java RESTful API criada para o SAntander Dev Week.
 
 ```mermaid
 classDiagram
-  class Usuario {
-    - nome: String
-    - account: Conta
+  class User {
+    - name: String
+    - account: Account
     - feature: List<Feature>
-    - card: Cartao
-    - news: List<Novidade>
+    - card: Card
+    - news: List<News>
   }
 
-  class Conta {
+  class Account {
     - number: String
     - agency: String
     - balance: Float
@@ -25,19 +25,18 @@ classDiagram
     - description: String
   }
 
-  class Cartao {
+  class Card {
     - number: String
     - limit: Float
   }
 
-  class Novidade {
+  class News {
     - icon: String
     - description: String
   }
 
-  Usuario -- Conta : possui
-  Usuario -- Feature : possui
-  Usuario -- Cartao : possui
-  Usuario -- Novidade : possui
-
+  User --> Account
+  User --> Feature
+  User --> Card
+  User --> News
 ```
